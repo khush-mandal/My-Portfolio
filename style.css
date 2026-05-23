@@ -107,15 +107,89 @@ span {
 }
 img {
   max-width: 100%;
-  height: auto;
+ height: 100%;
   background-size: cover;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   z-index: 1;
   border-radius: 10px;
   position: relative;
   background-size: cover;
-  background: fixed;
 }
+
+/* new card down 👇 */
+
+/* Card Container */
+.skill-card {
+  width: 320px;
+  background-color: transparent;
+  border-radius: 12px;
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Keeps the top corners of the image rounded */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #839aff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Hover Effect */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+
+/* Image Container */
+.card-image {
+  width: 100%;
+  height: 180px;
+  background-color: #0b80d6; /* Matches the blue in your image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits nicely */
+}
+
+/* Content Container */
+.card-content {
+  padding: 20px;
+}
+
+/* Typography */
+.card-title {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #1e293b;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* Technology Tags */
+.card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: #f1f5f9;
+  color: #3b82f6;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+/* new card up 👆 */
 button {
   background-color: #549fe9;
   position: relative;
@@ -342,7 +416,7 @@ h2 {
 .skill {
   height: 65vh;
   width: 25%;
-  border: 5px solid #000000;
+  border: 2px solid #000000;
   border-radius: 20px;
   box-shadow: #0047ab 5px 5px 15px;
   padding-right: 1em;
@@ -361,7 +435,7 @@ h2 {
   height: 100%;
 }
 .section1 {
-    background-color: transparent;
+  background-color: transparent;
   border-radius: 30px;
   height: 50%;
   width: 100%;
@@ -442,5 +516,41 @@ h2 {
   }
   .skills {
     margin-top: 50px;
+  }
+}
+
+
+/* The outer container that hides what's off-screen */
+.skills-scroller {
+  width: 100%;
+  overflow: hidden;
+  padding: 20px 0; /* Adds some breathing room for the hover shadow */
+}
+
+/* The moving track holding all the cards */
+.skills-track {
+  display: flex;
+  gap: 30px; /* Space between each card */
+  width: max-content; /* Forces the track to be as wide as all cards combined */
+  
+  /* The Animation: name | duration | timing function | repeat */
+  animation: scroll-horizontal 20s linear infinite;
+}
+
+/* THE MAGIC TRICK: Pause the animation when hovering anywhere on the track */
+.skills-track:hover {
+  animation-play-state: paused;
+}
+
+/* The Keyframes for scrolling */
+@keyframes scroll-horizontal {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    /* Because we duplicated the cards, moving it by -50% perfectly aligns 
+       the end of the original set with the start of the duplicate set, 
+       creating an endless loop. */
+    transform: translateX(-50%);
   }
 }
