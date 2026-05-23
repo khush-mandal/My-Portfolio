@@ -496,11 +496,13 @@ h2 {
     gap: 15px;
   }
   .about-content {
-    width: 95%;
-    margin-top: 30px;
+    width: 100vw;
+      padding: 10px;  
   }
   .aboutme {
+    width: 100vw;
     font-size: small;
+    text-align: center;
     line-height: 25px;
   }
   h2 {
