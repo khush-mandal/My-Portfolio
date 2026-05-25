@@ -320,7 +320,7 @@ image {
     display: block;
   }
   .dropdown {
-    display: block;
+    display: none;
   }
   .maincontainer {
     flex-direction: column;
@@ -491,6 +491,9 @@ h2 {
   }
   .intro {
     font-size: 0.9rem;
+  }
+  .dropdown{
+    display: none;
   }
   .medialinks {
     gap: 15px;
