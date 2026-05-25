@@ -1,0 +1,11 @@
+{
+  "name": "Khush's Portfolio",
+  "short_name": "portfolio",
+  "icons": [
+    {
+      "src": "khush img circle.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ]
+}
