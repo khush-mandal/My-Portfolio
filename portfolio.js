@@ -1,3 +1,45 @@
+
+// Fix: Select all sections and all nav links (main navbar)
+const sections = document.querySelectorAll('section');
+// Select all nav links in .nav-container with href starting with #
+const navlinks = document.querySelectorAll('.nav-container a[href^="#"]');
+
+function updateActiveNav() {
+    const scrollY = window.scrollY;
+    let activeSet = false;
+    sections.forEach(section => {
+        const sectionTop = section.offsetTop - 160; // adjust offset for fixed nav
+        const sectionHeight = section.offsetHeight;
+        const sectionId = section.getAttribute('id');
+        if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
+            navlinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').toLowerCase() === '#' + sectionId.toLowerCase()) {
+                    link.classList.add('active');
+                    activeSet = true;
+                }
+            });
+        }
+    });
+    if (!activeSet) {
+        navlinks.forEach(link => link.classList.remove('active'));
+    }
+}
+
+window.addEventListener('scroll', updateActiveNav);
+window.addEventListener('load', updateActiveNav);
+
+
+
+
+
+
+
+
+
+
+
+
 function toggleDropdown() {
         const dropdown = document.querySelector('.dropdown');
         const hamburger = document.querySelector('.hamburg');

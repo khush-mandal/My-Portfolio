@@ -8,14 +8,23 @@
 body {
   width: 100%;
   height: 100vh;
-
+ margin-top: 60px;
   background: linear-gradient(to left, #549fe9, #ebebeb);
+}
+
+.Myportfolio{
+  cursor: pointer;
 }
 nav {
   width: 100%;
   height: 10vh;
-  position: sticky;
+  position: fixed;     
+  top: 0;              
+  z-index: 10;
+ border-bottom: 1px solid #ffffff;
+  background-color: #538ac176;
 }
+
 .nav-container {
   width: 100%;
   height: 100%;
@@ -23,11 +32,19 @@ nav {
   justify-content: space-around;
   align-items: center;
   font-weight: bolder;
+  
 }
 a {
   color: black;
   text-decoration: none;
   font-weight: bolder;
+}
+.nav-container a.active,
+.link.contact-butn a.active {
+  color: #ffffff;
+  background-color: #549fe9;
+  border-radius: 20px;
+  padding: 8px 16px;
 }
 .logo {
   color: black;
@@ -88,26 +105,31 @@ span {
 }
 .nav-container .contact-butn {
   background-color: transparent;
-  padding: 5px 20px;
+  padding: 10px ;
   border-radius: 20px;
-  border: 2px solid #549fe9;
+  border: 2px solid #dfefff;
   color: rgb(26, 49, 47);
-  transition: 1s linear;
+  transition: 0.5s linear;
 }
 .nav-container .contact-butn a {
-  transition: 1s linear;
+  transition: 0.5s linear;
   color: rgb(0, 0, 0);
 }
-.nav-container .contact-butn a:hover {
+.nav-container .contact-butn a:hover{
+  background-color: #ffffff;
+  color: #000;
+  
+}
+.nav-container .contact-butn a:hover{
   background-color: #ffffff;
   color: #000;
 }
-.nav-container .links a:hover {
-  color: #000000;
+#active {
+  box-shadow: 0 0 10px #000000;
 }
 img {
   max-width: 100%;
- height: 100%;
+ height: 85vh;
   background-size: cover;
   box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
   z-index: 1;
@@ -116,80 +138,7 @@ img {
   background-size: cover;
 }
 
-/* new card down 👇 */
 
-/* Card Container */
-.skill-card {
-  width: 320px;
-  background-color: transparent;
-  border-radius: 12px;
- box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
-  overflow: hidden; /* Keeps the top corners of the image rounded */
-  transition: transform 0.3s ease, box-shadow 0.3s ease;
-  border: 2px solid #839aff;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-/* Hover Effect */
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
-}
-
-/* Image Container */
-.card-image {
-  width: 100%;
-  height: 180px;
-  background-color: #0b80d6; /* Matches the blue in your image */
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  overflow: hidden;
-}
-
-.card-image img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover; /* Ensures the image fits nicely */
-}
-
-/* Content Container */
-.card-content {
-  padding: 20px;
-}
-
-/* Typography */
-.card-title {
-  margin: 0 0 10px 0;
-  font-size: 1.4rem;
-  color: #1e293b;
-}
-
-.card-description {
-  font-size: 0.95rem;
-  color: #64748b;
-  line-height: 1.5;
-  margin: 0 0 20px 0;
-}
-
-/* Technology Tags */
-.card-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background-color: #f1f5f9;
-  color: #3b82f6;
-  padding: 5px 12px;
-  border-radius: 20px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid #e2e8f0;
-}
-
-/* new card up 👆 */
 button {
   background-color: #549fe9;
   position: relative;
@@ -275,6 +224,7 @@ image {
   border: 0.7px solid black;
 }
 .maincontainer {
+  margin-top: 60px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -287,31 +237,86 @@ image {
   padding-left: 20px;
   min-width: 300px;
 }
-
 .image {
   flex: 1;
   text-align: center;
   min-width: 300px;
 }
+/* new card down 👇 */
 
-@keyframes typing {
-  from {
-    width: 0;
-  }
-  to {
-    width: 100%;
-  }
+/* Card Container */
+.skill-card {
+  width: 320px;
+  background-color: transparent;
+  border-radius: 12px;
+ box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Keeps the top corners of the image rounded */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #839aff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
-@keyframes blink-caret {
-  from,
-  to {
-    border-color: transparent;
-  }
-  50% {
-    border-color: #549fe9;
-  }
+/* Hover Effect */
+.skill-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
 }
+
+/* Image Container */
+.card-image {
+  width: 100%;
+  height: 180px;
+  background-color: #0b80d6; /* Matches the blue in your image */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  overflow: hidden;
+}
+
+.card-image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover; /* Ensures the image fits nicely */
+}
+
+/* Content Container */
+.card-content {
+  padding: 20px;
+}
+
+/* Typography */
+.card-title {
+  margin: 0 0 10px 0;
+  font-size: 1.4rem;
+  color: #1e293b;
+}
+
+.card-description {
+  font-size: 0.95rem;
+  color: #64748b;
+  line-height: 1.5;
+  margin: 0 0 20px 0;
+}
+
+/* Technology Tags */
+.card-tags {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background-color: #f1f5f9;
+  color: #3b82f6;
+  padding: 5px 12px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  border: 1px solid #e2e8f0;
+}
+
+/* new card up 👆 */
+                                     /* Responsive Design */
 @media screen and (max-width: 768px) {
   .nav-container .link {
     display: none;
@@ -350,6 +355,7 @@ image {
   }
   h2 {
     font-size: 40px;
+
   }
   .carousel {
     width: 95%;
@@ -360,12 +366,78 @@ image {
     height: 20em;
   }
 }
+@media screen and (max-width: 480px) {
+  .logo {
+    font-size: 1.5rem;
+  }
+  .details {
+    font-size: 1rem;
+  }
+  .intro {
+    font-size: 0.9rem;
+  }
+  .dropdown{
+    display: none;
+    height: 180px;
+    width: auto;
+
+
+  }
+  .maincontainer{
+    z-index: 0;
+  }
+  .links {
+    z-index: 2;
+    height: 100%;
+    width: 88%;
+    
+  }
+  .medialinks {
+    gap: 15px;
+    z-index: 2;
+  }
+  .about-content {
+    width: 100vw;
+      padding: 10px;  
+  }
+
+  .image{
+    z-index: -1;
+  }
+  .aboutme {
+    width: 100vw;
+    font-size: small;
+    text-align: center;
+    line-height: 25px;
+  }
+  h2 {
+    font-size: 30px;
+  }
+  .carousel {
+    width: 100%;
+    margin: 30px auto;
+  }
+  .card {
+    width: 12em;
+    height: 18em;
+  }
+  .skills {
+    text-align: center;
+  }
+}
+
+@media  screen and (min-width: 768px) {
+  .maincontainer {
+    flex-direction: row;
+    padding: 20px;
+  }
+}
 
 /* about section styling */
 
 .about-content {
   width: 75%;
-  margin-top: 150px;
+  height: 100vh;
   margin-left: auto;
   margin-right: auto;
   display: flex;
@@ -375,6 +447,7 @@ image {
   padding: 50px 20px;
 }
 .aboutme {
+  width: 100%;
   line-height: 27px;
   margin: 30px;
   font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
@@ -398,8 +471,8 @@ h2 {
 
 /* Skills Section */
 .skills {
+  text-align: center;
   position: relative;
-  margin-top: 100px;
   width: 100%;
   height: 100vh;
   background: linear-gradient(to left, #549fe9, #ebebeb);
@@ -421,8 +494,6 @@ h2 {
   border-radius: 20px;
   box-shadow: #0047ab 5px 5px 15px;
   padding-right: 1em;
-
- 
 }
 .skill h3 {
   font-size: 1.5rem;
@@ -483,65 +554,6 @@ h2 {
   border-radius: 20px;
   box-shadow: #0047ab 5px 5px 15px;
 }
-@media screen and (max-width: 480px) {
-  .logo {
-    font-size: 1.5rem;
-  }
-  .details {
-    font-size: 1rem;
-  }
-  .intro {
-    font-size: 0.9rem;
-  }
-  .dropdown{
-    display: none;
-    height: 180px;
-    width: auto;
-
-
-  }
-  .maincontainer{
-    z-index: 0;
-  }
-  .links {
-    z-index: 2;
-    height: 100%;
-    width: 88%;
-    
-  }
-  .medialinks {
-    gap: 15px;
-    z-index: 2;
-  }
-  .about-content {
-    width: 100vw;
-      padding: 10px;  
-  }
-
-  .image{
-    z-index: -1;
-  }
-  .aboutme {
-    width: 100vw;
-    font-size: small;
-    text-align: center;
-    line-height: 25px;
-  }
-  h2 {
-    font-size: 30px;
-  }
-  .carousel {
-    width: 100%;
-    margin: 30px auto;
-  }
-  .card {
-    width: 12em;
-    height: 18em;
-  }
-  .skills {
-    margin-top: 50px;
-  }
-}
 
 
 /* The outer container that hides what's off-screen */
@@ -572,9 +584,182 @@ h2 {
     transform: translateX(0);
   }
   100% {
-    /* Because we duplicated the cards, moving it by -50% perfectly aligns 
-       the end of the original set with the start of the duplicate set, 
-       creating an endless loop. */
-    transform: translateX(-50%);
+    transform: translateX(-40%);
   }
+}
+                           /* < PROJECTS SECTION  --> */
+#projects{
+  text-align: center;
+  width: 100%;
+  height: 100vh;
+}
+.heading {
+  text-align: center;
+  font-size: 2.5rem;
+  color: #f7f7f7;
+  text-shadow: 0 0 10px #000000;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+} 
+
+.project-section{
+  display: flex;
+  flex-direction: column;
+justify-content: center;
+  align-items: center;
+  gap: 8px;
+  margin-top: 50px;
+}
+.project-card{
+  width: 80%;
+  height : 10em;
+  display: flex;
+  justify-content: space-evenly;
+  background-color: transparent;
+  border-radius: 12px;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+  overflow: hidden; /* Keeps the top corners of the image rounded */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  border: 2px solid #839aff;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.project-card:hover {
+  
+  scale:0.99;
+  box-shadow: 0 12px 20px rgba(0, 0, 0, 0.15);
+}
+.serial-section{
+  width: 20%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+.detail-section{
+  text-align: left;
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.button-section{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  justify-content: center;
+  align-items: center;
+  margin-right: 15px;
+  width: 22%;
+  
+}
+.checkin-btn{
+  width: 95%;
+  background-color: #549fe9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: black;
+  box-shadow: 0 12px 20px #b3d6f5;
+}
+.checkin-btn:hover {
+  background-color: aliceblue;
+  color: black;
+  border-radius: 15px;
+  transition: 1s ease;
+}
+.code-btn{
+  width: 95%;
+  background-color: transparent;
+  border: 2px solid #549fe9;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
+  color: black;
+   box-shadow: 0 12px 20px #2491ef;
+}
+.code-btn:hover {
+  background-color: #f7fbff;
+  color: black;
+  border-radius: 15px;
+  transition: 1s ease;
+}
+                           /* CONTACT SECTION */
+#contact{
+  height: 100vh;
+  text-align: center;
+  
+}
+.redirect-section{
+  width: 75%;
+  height: 15%;
+  display: flex;
+  margin-top: 30px;
+  margin-left: auto;
+  margin-right: auto;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-around;
+  border : 2px solid rgb(0, 0, 0) ;
+  border-radius: 50px;
+ 
+}
+.contact-btn{
+  font-size:xx-large;
+  border-radius: 5px;
+  cursor: pointer;
+ 
+}
+.detail-input{
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  height: 30%;
+}
+.message-input{
+  height: 40%;
+}
+.contact-form{
+  margin:50px auto;
+  width: 30%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  border:2px solid #000000;
+  border-radius: 10%;
+  box-shadow: #0047ab 5px 5px 15px;
+}
+
+.contact-input{
+text-align: left;
+border:2px solid rgb(100, 173, 233);
+border-radius: 10px;
+width: 45%;
+height : 50px;
+padding: 10px;
+}
+.add-message{
+  border:2px solid rgb(100, 173, 233);
+  border-radius: 10px;
+  width: 95%;
+  height : 90%;
+  padding: 10px;
+}
+.form{
+
+  display: flex;
+  flex-direction: start;
+  height: 800px;
+  width: 100%;
+ 
+}
+.form-submit{
+  width: 50%;
+
 }

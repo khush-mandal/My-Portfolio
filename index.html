@@ -15,16 +15,17 @@
 </head>
 
 <body>
+                                         <!--  NAVBAR  -->
     <nav>
         <div class="nav-container">
             <div class="logo">
-                <span> Khush's Portfolio </span>
+                <a href="#" class="MyPortfolio"><span> Khush's Portfolio </span></a>
             </div>
-            <div class="link contact-butn"><a href="#">Home</a></div>
-            <div class="link contact-butn"><a href="#">About</a></div>
-            <div class="link contact-butn"><a href="#">Skills</a></div>
-            <div class="link contact-butn"><a href="#">Projects</a></div>
-            <div class="link contact-butn"><a href="#">Contact me</a></div>
+            <div class="link contact-butn"><a href="#home">Home</a></div>
+            <div class="link contact-butn"><a href="#about">About</a></div>
+            <div class="link contact-butn"><a href="#skills">Skills</a></div>
+            <div class="link contact-butn"><a href="#projects">Projects</a></div>
+            <div class="link contact-butn"><a href="#contact">Contact me</a></div>
             <a onclick="toggleDropdown()" href="#"><i class="fa-solid  fa-bars hamburg"></i></a>
         </div>
 
@@ -39,7 +40,8 @@
             </div>
         </div>
     </nav>
-    <section>
+                                          <!-- HERO SECTION  -->
+    <section id="home">
         <div class="maincontainer">
             <div class="image">
                 <img src="bg_removed.png" alt="khush photo">
@@ -59,7 +61,6 @@
                     <a href="https://www.youtube.com/channel/UClUWet_n1o58nOUWyp0KzbA"><i
                             class="fa-brands fa-youtube"></i></a>
                     <a href="https://github.com/khush-mandal"><i class="fa-brands fa-github"></i></a>
-                    <a href="#"> <i class="fa-brands fa-whatsapp"></i></a>
                     <a href="#"><i class="fa-brands fa-x-twitter"></i></a>
                     <a href="#"><i class="fa-brands fa-linkedin"></i></a>
                 </div>
@@ -69,13 +70,17 @@
 
             </div>
         </div>
-    </section>
+    </section>    
     <br>
     <br>
     <br>
-    <about>
+
+                                           <!-- ABOUT SECTION  -->
+    
+    <section id="about">                                   
+      <about>
         <div class="about-content">
-            <h2>About Me</h2>
+            <span class="heading">About Me</span>
             <div class="aboutme">
                 <p>Hi, I'm Khush.
 
@@ -96,13 +101,15 @@
                 </p>
             </div>
         </div>
-    </about>
-
-    <section>
+      </about>  
+    </section>  
+                                            <!-- SKILL SECTION  -->
+    <section id="skills">
         <skills>
             <div class="skills ">
-                <h2> Skills </h2>
-
+                <span class="heading"> Skills </span>
+                <br>
+                <br>
                 <div class="skills-scroller">
                     <div class="skills-track">
      
@@ -227,16 +234,109 @@
     </div>
   </div>
 </div>
-
-
                     </div>
                 </div>
               </div>
             </div>
         </skills>
-
-
     </section>
+                                            <!-- PROJECTS SECTION  -->
+<section id="projects">
+   <span class="heading"> PROJECTS </span>
+   <br>
+   <br>
+   
+    <projects class="project-section">
+     <div class="project-card">
+          <div class="serial-section">
+              <h2>01</h2>
+          </div>
+          <div class="detail-section">
+              <h2>Tic Tac Toe</h2>
+              <br>
+              <p>A classic two-player game built with HTML, CSS, and JavaScript.</p>
+              <br>
+                  <div class="card-tags">
+                  <span class="tag"> HTML</span> 
+                  <span class="tag"> CSS</span>
+                  <span class="tag">JAVASCRIPT</span></div>
+                  </div>
+          <div class="button-section">
+            <div class="checkin-btn">Check in   <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                  <div class="code-btn">Code <a href="https://github.com/khush-mandal"><i class="fa-brands fa-github"></i></a></div>
+          </div>
+     </div>
+      <div class="project-card">
+          <div class="serial-section">
+              <h2>02</h2>
+          </div>
+          <div class="detail-section">
+              <h2>Stone Paper Scissors</h2>
+              <br>
+              <p>A simple implementation of the classic game using HTML, CSS, and JavaScript.</p>
+              <br>
+                  <div class="card-tags">
+                  <span class="tag"> HTML</span> 
+                  <span class="tag"> CSS</span>
+                  <span class="tag">JAVASCRIPT</span></div>
+                  </div>
+          <div class="button-section">
+                  <div class="checkin-btn">Check in    <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                  <div class="code-btn">Code <a href="https://github.com/khush-mandal"><i class="fa-brands fa-github"></i></a></div>
+          </div>
+     </div>
+      <div class="project-card">
+          <div class="serial-section">
+              <h2>03</h2>
+          </div>
+          <div class="detail-section">
+              <h2>Project Name</h2>
+              <br>
+              <p>Description of the project.</p>
+              <br>
+                  <div class="card-tags">
+                  <span class="tag"> HTML</span> 
+                  <span class="tag"> CSS</span>
+                  <span class="tag">JAVASCRIPT</span></div>
+                  </div>
+          <div class="button-section">
+                  <div class="checkin-btn">Check In  <i class="fa-solid fa-arrow-up-right-from-square"></i></div>
+                
+          </div>
+     </div>
+    </projects>
+</section>
+                                 <!-- CONTACT SECTION -->
+<section id="contact">
+    <h2 class="heading"> Let's connect  <i class="fa-duotone fa-solid fa-phone "></i></h2>
+    <div class="redirect-section"> 
+        <a href="https://www.instagram.com/_khush_.05/"><i class="fa-brands fa-instagram contact-btn"></i></a>
+        <a href="https://www.youtube.com/channel/UClUWet_n1o58nOUWyp0KzbA"><i
+                class="fa-brands fa-youtube contact-btn"></i></a>
+        <a href="https://github.com/khush-mandal"><i class="fa-brands fa-github contact-btn"></i></a>
+        <a href="mailto:khushmandal05@gmail.com"><i class=" fa-regular fa-envelope contact-btn"></i></a>
+        <a href="#"><i class="fa-brands fa-x-twitter contact-btn"></i></a>
+        <a href="#"><i class="fa-brands fa-linkedin contact-btn"></i></a>
+
+    </div>
+     <div class="form">
+      <div class="contact-form">
+      <br>
+      <h3>Get In Touch</h3>
+      <div class="detail-input">
+      <input type="text" placeholder=" First name" class="contact-input">
+      <input type=" text" placeholder=" Last name" class="contact-input">
+      <input type="email" placeholder=" Email" class="contact-input">
+      <input type="tel" placeholder="mobile" class="contact-input" >
+      </div>
+        <div class="message-input">
+                <input type="text" placeholder=" Add Your thoughts" class="add-message">
+           <button class="form-submit">Submit</button>
+        </div>
+        
+    </div>
+  </div>
+</section>
 
     <script src="portfolio.js"></script>
 </body>
