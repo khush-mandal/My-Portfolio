@@ -161,7 +161,6 @@ button:hover {
 .link:hover {
   border: 2px solid #549fe9;
   background-color: #f7fbff;
-  border-radius: 20px;
   padding: 8px;
   transition: 1s ease;
 }
@@ -568,9 +567,7 @@ h2 {
   display: flex;
   gap: 30px; /* Space between each card */
   width: max-content; /* Forces the track to be as wide as all cards combined */
-  
-  /* The Animation: name | duration | timing function | repeat */
-  animation: scroll-horizontal 20s linear infinite;
+  animation: scroll-horizontal 18s linear infinite;
 }
 
 /* THE MAGIC TRICK: Pause the animation when hovering anywhere on the track */
@@ -578,13 +575,13 @@ h2 {
   animation-play-state: paused;
 }
 
-/* The Keyframes for scrolling */
+/* The Keyframes for seamless scrolling */
 @keyframes scroll-horizontal {
   0% {
     transform: translateX(0);
   }
   100% {
-    transform: translateX(-40%);
+    transform: translateX(-50%);
   }
 }
                            /* < PROJECTS SECTION  --> */
@@ -689,9 +686,8 @@ justify-content: center;
 }
                            /* CONTACT SECTION */
 #contact{
-  height: 100vh;
+  height: 70vh;
   text-align: center;
-  
 }
 .redirect-section{
   width: 75%;
@@ -724,18 +720,6 @@ justify-content: center;
 .message-input{
   height: 40%;
 }
-.contact-form{
-  margin:50px auto;
-  width: 30%;
-  height: 60%;
-  display: flex;
-  flex-direction: column;
-  gap: 20px;
-  border:2px solid #000000;
-  border-radius: 10%;
-  box-shadow: #0047ab 5px 5px 15px;
-}
-
 .contact-input{
 text-align: left;
 border:2px solid rgb(100, 173, 233);
@@ -752,14 +736,18 @@ padding: 10px;
   padding: 10px;
 }
 .form{
-
+ margin:50px auto;
+  width: 30%;
+  height: 100%;
   display: flex;
-  flex-direction: start;
-  height: 800px;
-  width: 100%;
- 
+  flex-direction: column;
+  gap: 20px;
+  border:2px solid #000000;
+  border-radius: 10%;
+  box-shadow: #0047ab 5px 5px 15px;
+  margin-bottom: 100px;
 }
 .form-submit{
   width: 50%;
-
+margin-bottom: 100px;
 }

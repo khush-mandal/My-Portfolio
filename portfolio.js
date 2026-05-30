@@ -4,9 +4,8 @@ const sections = document.querySelectorAll('section');
 // Select all nav links in .nav-container with href starting with #
 const navlinks = document.querySelectorAll('.nav-container a[href^="#"]');
 
-function updateActiveNav() {
-    const scrollY = window.scrollY;
-    let activeSet = false;
+window.addEventListener('scroll', () => {
+    let scrollY = window.scrollY;
     sections.forEach(section => {
         const sectionTop = section.offsetTop - 160; // adjust offset for fixed nav
         const sectionHeight = section.offsetHeight;
@@ -14,20 +13,14 @@ function updateActiveNav() {
         if (scrollY >= sectionTop && scrollY < sectionTop + sectionHeight) {
             navlinks.forEach(link => {
                 link.classList.remove('active');
+                // Match href with section id (case-insensitive)
                 if (link.getAttribute('href').toLowerCase() === '#' + sectionId.toLowerCase()) {
                     link.classList.add('active');
-                    activeSet = true;
                 }
             });
         }
     });
-    if (!activeSet) {
-        navlinks.forEach(link => link.classList.remove('active'));
-    }
-}
-
-window.addEventListener('scroll', updateActiveNav);
-window.addEventListener('load', updateActiveNav);
+});
 
 
 
