@@ -549,25 +549,25 @@ h2 {
   display: flex;
   width: 98%;
   margin: auto;
-  overflow: auto;
+  overflow: hidden;
   padding: 20px 0; /* Adds some breathing room for the hover shadow */
   border: 2px solid black;
+  flex: auto;
+  position: relative;
+}
+.skills-scroller:hover .skills-track {
+  animation-play-state: paused;
 }
 .skills-scroller::-webkit-scrollbar {
-  display: none; /* Hides the scrollbar for a cleaner look */
-}
-/* The moving track holding all the cards */
-.skills-track {
-  display: flex;
-  padding-right: 20px; /* Extra space at the end for smooth looping */
-  gap: 30px; /* Space between each card */
-  min-width: max-content; /* Forces the track to be as wide as all cards combined */
-  animation: scroll-horizontal 5s ease infinite;
+  display: none; 
 }
 
-/* THE MAGIC TRICK: Pause the animation when hovering anywhere on the track */
-.skills-scroller:hover {
-  animation-play-state: paused;
+.skills-track {
+  display: flex;
+  padding-right: 20px; 
+  gap: 30px;
+  min-width: max-content; 
+  animation: scroll-horizontal 5s ease infinite;
 }
 
 /* The Keyframes for seamless scrolling */
