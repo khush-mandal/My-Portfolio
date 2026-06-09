@@ -34,11 +34,17 @@ window.addEventListener('scroll', () => {
 
 
 function toggleDropdown() {
-        const dropdown = document.querySelector('.dropdown');
-        const hamburger = document.querySelector('.hamburg');
-        dropdown.style.display = dropdown.style.display === 'flex' ? 'none' : 'flex';
-        dropdown.style.flexDirection = dropdown.style.flexDirection === 'column' ? 'row' : 'column';
-        dropdown.style.justifyContent = dropdown.style.justifyContent === 'flex-start' ? 'flex-end' : 'flex-start';
-        dropdown.style.alignItems = dropdown.style.alignItems === 'flex-start' ? 'flex-end' : 'center';
-        hamburger.style.display = hamburger.style.display === 'none' ? 'block' : 'none';
+    const dropdown = document.querySelector('.dropdown');
+    const hamburgerIcon = document.querySelector('.hamburger');
+    const closeIcon = document.querySelector('.cross');
+
+    dropdown.classList.toggle('open');
+    dropdown.setAttribute('aria-hidden', dropdown.classList.contains('open') ? 'false' : 'true');
+    if (dropdown.classList.contains('open')) {
+        hamburgerIcon.style.display = 'none';
+        closeIcon.style.display = 'block';
+    } else {
+        hamburgerIcon.style.display = 'block';
+        closeIcon.style.display = 'none';
     }
+}
