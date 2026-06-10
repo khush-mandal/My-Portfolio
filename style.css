@@ -5,12 +5,19 @@
   box-sizing: border-box;
 }
 
+.MyPortfolio{
+color: #0047ab;
+}
 body {
-  width: 100%;
+  width: 100%h;
   min-height: 100vh;
   padding-top: 72px;
   margin: 0;
   background: linear-gradient(to left, #549fe9, #ebebeb);
+
+}
+body::-webkit-scrollbar {
+  display: none;
 }
 
 nav {
@@ -53,8 +60,8 @@ a {
   font-weight: bolder;
 }
 .logo span {
-  color: #ffffff;
-  text-shadow: 0 0 12px #ffffff;
+  color: #0047ab;
+  text-shadow: 0 0 5px #b5c8e8;
 }
 span {
   color: #0047ab;
@@ -83,7 +90,9 @@ span {
   color: black;
   text-decoration: none;
   font-weight: 500;
-  transition: color 0.2s ease, transform 0.2s ease;
+  transition:
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 .nav-container .links a::before {
   position: absolute;
@@ -114,16 +123,6 @@ span {
   background-color: #ffffff;
   color: #000;
 }
-img {
-  max-width: 100%;
-  height: auto;
-  background-size: cover;
-  box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.25);
-  z-index: 1;
-  border-radius: 16px;
-  position: relative;
-}
-
 .dropdown {
   position: fixed;
   top: 70px;
@@ -160,6 +159,15 @@ img {
 
 .dropdown .links a:hover {
   background: #e8f1ff;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  background-size: cover;
+  box-shadow: 5px 5px 18px rgba(0, 0, 0, 0.25);
+  z-index: 1;
+  border-radius: 16px;
+  position: relative;
 }
 
 button {
@@ -211,7 +219,6 @@ button:hover {
 }
 
 .maincontainer {
-  margin-top: 70px;
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -231,89 +238,52 @@ button:hover {
   min-width: 300px;
 }
 
-/* new card down 👇 */
 
-/* Card Container */
-.skill-card {
-  width: min(320px, 100%);
-  background-color: transparent;
-  border-radius: 16px;
-  box-shadow: 0 12px 24px rgba(0, 0, 0, 0.16);
-  overflow: hidden;
-  transition:
-    transform 0.3s ease,
-    box-shadow 0.3s ease;
-  border: 1px solid rgba(131, 154, 255, 0.5);
-  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
-}
+/* about section styling */
 
-/* Hover Effect */
-.skill-card:hover {
-  transform: translateY(-8px);
-  box-shadow: 0 18px 30px rgba(0, 0, 0, 0.18);
-}
-
-/* Image Container */
-.card-image {
-  width: 100%;
-  height: 210px;
-  background-color: #0b80d6;
+#about {
   display: flex;
-  justify-content: center;
+  height: 70vh;
   align-items: center;
-  overflow: hidden;
+  justify-content: center;
 }
 
-.card-image img {
+.about-content {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
-
-/* Content Container */
-.card-content {
+.aboutme {
+  width: 80%;
+  line-height: 27px;
+  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
+  font-size: larger;
+  text-align: center;
   padding: 20px;
 }
-
-/* Typography */
-.card-title {
-  margin: 0 0 10px 0;
-  font-size: 1.4rem;
-  color: #1e293b;
+h2 {
+  text-shadow: #0047ab 5px 5px 15px;
+  font-size: 50px;
+  text-align: center;
+}
+.connect-button {
+  background-color: #549fe9;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 20px;
+  font-size: 1.2rem;
+  cursor: pointer;
 }
 
-.card-description {
-  font-size: 0.95rem;
-  color: #64748b;
-  line-height: 1.6;
-  margin: 0 0 20px 0;
-}
-
-/* Technology Tags */
-.card-tags {
-  display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
-}
-
-.tag {
-  background-color: #f1f5f9;
-  color: #3b82f6;
-  padding: 6px 12px;
-  border-radius: 999px;
-  font-size: 0.8rem;
-  font-weight: 600;
-  border: 1px solid #e2e8f0;
-}
-
-/* new card up 👆 */
 /* Responsive Design */
 @media screen and (max-width: 1024px) {
   .nav-container {
     gap: 0.75rem;
   }
 }
-
 @media screen and (max-width: 768px) {
   .nav-container .link {
     display: none;
@@ -422,32 +392,37 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 480px) {
-  .dropdown{
+@media screen and (max-width: 490px) {
+
+body {
+  width: 100%;
+  margin: 0;
+  background: linear-gradient(to left, #549fe9, #ebebeb);
+}
+  .dropdown {
     background-color: transparent !important;
     border: 2px solid #549fe9;
     height: 50vh;
   }
-  
+
   .nav-container {
     gap: 0.5rem;
   }
   .links {
     margin-right: 16px;
-  
   }
   .menu {
     background-color: #549fe9;
     border: 2px solid #549fe9;
     border-radius: 12px;
     text-align: center;
-  margin: 6px ;
+    margin: 6px;
   }
   .logo {
     font-size: 1.45rem;
   }
   a {
-    background-color: transparent !important; ;
+    background-color: transparent !important;
   }
   .intro {
     font-size: 0.95rem;
@@ -455,14 +430,21 @@ button:hover {
   .medialinks {
     gap: 14px;
   }
+  .maincontainer{
+    margin-bottom: 40px;
+  }
+#about{
+  margin-top: 70px;
+  width: 100vw;
 
+}
   .about-content {
     font-size: 0.9rem;
     width: 100%;
     margin-left: 70px;
   }
   .aboutme {
-    margin: 0px ;
+    margin: 0px;
     width: 100%;
     font-size: 0.95rem;
   }
@@ -490,87 +472,89 @@ button:hover {
   }
 }
 
-/* about section styling */
 
-section#about {
-  padding-top: 40px;
-  padding-bottom: 40px;
+/* Skills Section */
+
+#skills{
+  text-align: center;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
 }
 
-.about-content {
-  width: 100%;;
-  margin: 0 ;
+.card-container {
+  height: 55vh;
+  width: 99%;
+  margin: 20px auto;
+  padding: 20px;
+  overflow: hidden;
+}
+.card-container::-webkit-scrollbar {
+  display: none;
+}
+.skills-track {
+  display: flex;
+  gap: 0;
+  animation: scrollCards 11s linear infinite;
+}
+.skills-track:hover {
+  animation-play-state: paused;
+}
+.group {
+  display: flex;
+  margin-right: 20px;
+  gap: 20px;
+  align-items: stretch;
+  justify-content: center;
+}
+.card {
+  flex: 0 0 17em;
+  min-width: 17em;
+  max-width: 17em;
+  height: 350px;
+  background-color: #f0f0f0;
+  border-radius: 15px;
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
+  animation: none;
+  background: content-box radial-gradient(#2f8ce9, #c4dce8);
 }
-.aboutme {
-  width: 100%;
-  line-height: 27px;
-  margin: 30px;
-  font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS", sans-serif;
-  font-size: larger;
-  text-align: center;
-  padding: 20px;
+.card:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.05);
+  transition: 0.3s ease;
 }
-h2 {
-  text-shadow: #0047ab 5px 5px 15px;
-  font-size: 50px;
-  text-align: center;
-}
-.connect-button {
-  background-color: #549fe9;
-  border: none;
-  padding: 10px 20px;
-  border-radius: 20px;
-  font-size: 1.2rem;
-  cursor: pointer;
-}
-
-/* Skills Section */
-.skills {
-  text-align: center;
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  background: linear-gradient(to left, #549fe9, #ebebeb);
-}
-
-/* The outer container that hides what's off-screen */
-.skills-scroller {
-  display: flex;
-  width: 98%;
-  margin: auto;
-  overflow: hidden;
-  padding: 20px 0; /* Adds some breathing room for the hover shadow */
-  border: 2px solid black;
-  flex: auto;
-  position: relative;
-}
-.skills-scroller:hover .skills-track {
-  animation-play-state: paused;
-}
-.skills-scroller::-webkit-scrollbar {
-  display: none; 
-}
-
-.skills-track {
-  display: flex;
-  padding-right: 20px; 
-  gap: 30px;
-  min-width: max-content; 
-  animation: scroll-horizontal 5s linear infinite;
-}
-
-/* The Keyframes for seamless scrolling */
-@keyframes scroll-horizontal {
+/* Animation */
+@keyframes scrollCards {
   0% {
-    transform: translateX(1%);
+    transform: translateX(0);
   }
   100% {
     transform: translateX(-50%);
   }
+}
+.skill-image {
+  padding: 7px;
+  height: 50%;
+  width: 100%;
+  background-size: cover;
+  border-radius: 12px;
+}
+.skill-detail {
+  margin-top: 10px;
+  font-size: 1.1rem;
+  height: 50%;
+}
+.skill-logo {
+  height: 100%;
+  background-size: cover;
+  background-image: url("all images used\fronend.png");
+  box-shadow: none;
 }
 /* < PROJECTS SECTION  --> */
 #projects {
@@ -717,7 +701,7 @@ h2 {
   font-size: 1rem;
 }
 .add-message {
-  margin : 5px;
+  margin: 5px;
   border: 2px solid rgb(100, 173, 233);
   border-radius: 14px;
   width: 100%;

@@ -23,16 +23,6 @@ window.addEventListener('scroll', () => {
 });
 
 
-
-
-
-
-
-
-
-
-
-
 function toggleDropdown() {
     const dropdown = document.querySelector('.dropdown');
     const hamburgerIcon = document.querySelector('.hamburger');
