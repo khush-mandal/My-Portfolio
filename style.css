@@ -482,6 +482,7 @@ body {
   justify-content: center;
   align-items: center;
   flex-direction: column;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', 'Geneva', 'Verdana', 'sans-serif';
 }
 
 .card-container {
@@ -554,6 +555,11 @@ body {
   height: 100%;
   background-size: cover;
   box-shadow: none;
+}
+.skill-heading{
+  border-radius: 14px;
+  background-color: #ffffff;
+  width: 13em;
 }
 /* < PROJECTS SECTION  --> */
 #projects {
