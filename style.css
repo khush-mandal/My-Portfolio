@@ -553,7 +553,6 @@ body {
 .skill-logo {
   height: 100%;
   background-size: cover;
-  background-image: url("images\fronend.png");
   box-shadow: none;
 }
 /* < PROJECTS SECTION  --> */
